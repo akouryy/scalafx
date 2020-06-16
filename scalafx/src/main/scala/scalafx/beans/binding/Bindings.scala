@@ -108,28 +108,28 @@ trait Bindings {
   }
 
   protected class NumberConditionBuilder(whenBuilder: jfxbb.When#NumberConditionBuilder) {
-    def otherwise(otherwiseExpression: jfxbv.ObservableNumberValue) = whenBuilder.otherwise(otherwiseExpression)
-    def otherwise(otherwiseExpression: Int) = whenBuilder.otherwise(otherwiseExpression)
-    def otherwise(otherwiseExpression: Long) = whenBuilder.otherwise(otherwiseExpression)
-    def otherwise(otherwiseExpression: Float) = whenBuilder.otherwise(otherwiseExpression)
-    def otherwise(otherwiseExpression: Double) = whenBuilder.otherwise(otherwiseExpression)
+    def otherwise(jobs: jfxbv.ObservableNumberValue) = whenBuilder.otherwise(jobs)
+    def otherwise(num: Int) = whenBuilder.otherwise(num)
+    def otherwise(num: Long) = whenBuilder.otherwise(num)
+    def otherwise(num: Float) = whenBuilder.otherwise(num)
+    def otherwise(num: Double) = whenBuilder.otherwise(num)
   }
 
   protected class BooleanConditionBuilder(whenBuilder: jfxbb.When#BooleanConditionBuilder) {
-    def otherwise(otherwiseExpression: jfxbv.ObservableBooleanValue) = whenBuilder.otherwise(otherwiseExpression)
-    def otherwise(otherwiseExpression: Boolean) = whenBuilder.otherwise(otherwiseExpression)
+    def otherwise(jobs: jfxbv.ObservableBooleanValue) = whenBuilder.otherwise(jobs)
+    def otherwise(bool: Boolean) = whenBuilder.otherwise(bool)
   }
 
   protected class StringConditionBuilder(whenBuilder: jfxbb.When#StringConditionBuilder) {
-    def otherwise(otherwiseExpression: jfxbv.ObservableStringValue) = whenBuilder.otherwise(otherwiseExpression)
-    def otherwise(otherwiseExpression: String) = whenBuilder.otherwise(otherwiseExpression)
+    def otherwise(jobs: jfxbv.ObservableStringValue) = whenBuilder.otherwise(jobs)
+    def otherwise(str: String) = whenBuilder.otherwise(str)
   }
 
   protected class ObjectConditionBuilder[T](whenBuilder: jfxbb.When#ObjectConditionBuilder[T]) {
     // explicit conversion needed due to T(Any) typed method
-    def otherwise(otherwiseExpression: ObservableValue[T, T]) = whenBuilder.otherwise(ObservableValue.sfxObservableValue2jfxObjectValue[T](otherwiseExpression))
-    def otherwise(otherwiseExpression: jfxbv.ObservableObjectValue[T]) = whenBuilder.otherwise(otherwiseExpression)
-    def otherwise(otherwiseExpression: T) = whenBuilder.otherwise(otherwiseExpression)
+    def otherwise(sobs: ObservableValue[T, T]) = whenBuilder.otherwise(ObservableValue.sfxObservableValue2jfxObjectValue[T](sobs))
+    def otherwise(jobs: jfxbv.ObservableObjectValue[T]) = whenBuilder.otherwise(jobs)
+    def otherwise(obj: T) = whenBuilder.otherwise(obj)
   }
 
   /**
